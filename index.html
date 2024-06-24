@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <!-- ensure that the web page is displayed correctly and consistently across different devices and screen sizes, and that it can handle a wide range of character sets and languages. The <meta> tag is used to define metadata about the HTML document, such as the character encoding and viewport properties. In this example, the <meta> tags set the character encoding to UTF-8 and define the viewport properties for the web page. -->
     <!-- sets the character encoding for the document to UTF-8. This ensures that the web page can display characters from various languages and character sets. -->
     <meta charset="utf-8" />
     <!-- sets the viewport properties for the web page. The viewport determines how the web page is displayed on different devices and screen sizes. The "initial-scale=1" property sets the initial zoom level of the page to 100%, while the "maximum-scale=1" and "user-scalable=no" properties prevent users from zooming in or out of the page using pinch or zoom gestures on their devices. -->
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta
+      name="viewport"
+      content="initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
     <title>Data Collector for AGOL</title>
 
-    <link rel="stylesheet" href="https://js.arcgis.com/4.29/esri/themes/light/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://js.arcgis.com/4.29/esri/themes/light/main.css"
+    />
     <link rel="stylesheet" type="text/css" href="/style.css" />
     <script src="https://js.arcgis.com/4.29/"></script>
     <script src="/mobile_map.js"></script>
+  </head>
 
-
-</head>
-
-<body>
-    <div id = "viewDiv">
-    </div>
-</body>
-
+  <body>
+    <div id="viewDiv"></div>
+  </body>
 </html>
