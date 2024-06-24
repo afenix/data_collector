@@ -1,5 +1,5 @@
 // Load the AMD modules from the ESRI API
-require(['esri/Map', 'esri/views/MapView', 'esri/config', 'esri/widgets/Locate'], (Map, MapView, esriConfig, Locate) => {
+require(['esri/Map', 'esri/views/MapView', 'esri/config', 'esri/widgets/Locate', 'esri/widgets/Search'], (Map, MapView, esriConfig, Locate, Search) => {
 
     // Set the API key (make sure it's restricted to the domain of the application)
     esriConfig.apiKey = "AAPK83337061f79941cdbcba8ea16add7f1csWFIvmrzXU7TvesGSEbfGqhfxRivSP37KmfuCDfiec8kVrxhDCre40EzzsvFCLSB";
@@ -17,6 +17,7 @@ require(['esri/Map', 'esri/views/MapView', 'esri/config', 'esri/widgets/Locate']
       zoom: 13                      // Sets the zoom level of detail (LOD) to 13
     })
 
+    // Create the locate widget
     const locateBtn = new Locate({
       view: view
     });
@@ -24,6 +25,17 @@ require(['esri/Map', 'esri/views/MapView', 'esri/config', 'esri/widgets/Locate']
     // Add the locate widget to the top left corner of the view
     view.ui.add(locateBtn, {
       position: "top-left"
+    });
+
+    // Create the search widget
+    const searchWidget = new Search({
+      view: view
+    });
+
+    // Adds the search widget below other elements in the top right corner of the view
+    view.ui.add(searchWidget, {
+      position: "top-right",
+      index: 2
     });
 
 
