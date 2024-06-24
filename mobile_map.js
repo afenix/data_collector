@@ -12,7 +12,9 @@ require(['esri/Map', 'esri/views/MapView', 'esri/config'], (Map, MapView, esriCo
     // Create the MapView object to be the reference node to serve as the html container for the map
     const view = new MapView({
       container: 'viewDiv', // Reference to the DOM node that will contain the view
-      map: map // References the map object
+      map: map,
+      center: [-105.0166, 39.6133], // The center of the map as lon/lat for Littleton, Colorado
+      zoom: 13                      // Sets the zoom level of detail (LOD) to 13
     })
 
 })
