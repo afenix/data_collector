@@ -1,5 +1,5 @@
 // Load the AMD modules from the ESRI API
-require(['esri/Map', 'esri/views/MapView', 'esri/config', 'esri/widgets/Locate', 'esri/widgets/Search'], (Map, MapView, esriConfig, Locate, Search) => {
+require(['esri/Map', 'esri/views/MapView', 'esri/config', 'esri/widgets/Locate', 'esri/widgets/Search', 'esri/widgets/Expand'], (Map, MapView, esriConfig, Locate, Search, Expand) => {
 
     // Set the API key (make sure it's restricted to the domain of the application)
     esriConfig.apiKey = "AAPK83337061f79941cdbcba8ea16add7f1csWFIvmrzXU7TvesGSEbfGqhfxRivSP37KmfuCDfiec8kVrxhDCre40EzzsvFCLSB";
@@ -32,11 +32,14 @@ require(['esri/Map', 'esri/views/MapView', 'esri/config', 'esri/widgets/Locate',
       view: view
     });
 
-    // Adds the search widget below other elements in the top right corner of the view
-    view.ui.add(searchWidget, {
-      position: "top-right",
-      index: 2
+    // Initialize and add the Expand widget to toggle the visibility of the Search widget
+    const searchExpand = new Expand({
+      expandIcon: "search",  // // Use a search icon for the expand/collapse button. See https://developers.arcgis.com/calcite-design-system/icons/
+      expandTooltip: "Expand Search", // Custom tooltip text for the expand button
+      view: view,
+      content: searchWidget
     });
+    view.ui.add(searchExpand, "top-left");
 
 
 })
