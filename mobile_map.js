@@ -49,5 +49,15 @@ require([
   })
   view.ui.add(searchExpand, 'top-left')
 
+  // Add a constructor for the FeatureLayer
+  const survey123_Data = new FeatureLayer({
+    // URL to the service
+    url: 'https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/survey123_7cef333f16974c6e89ffcb820fa3bcb2_results/FeatureServer'
+  })
+
+  map.add(survey123_Data);
+
+
+
 
 })
